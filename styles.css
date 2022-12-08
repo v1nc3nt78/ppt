@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+[data-theme="light"] {
+    --primary:rgb(88, 185, 241);
+    --background: #fff;
+    --text: #000;
+}
+
+[data-theme="dark"] {
+    --primary: rgb(255, 145, 0);
+    --background:rgb(37, 80, 173);
+    --text: #fff;
+}
+
+.color{
+    color:var (--text);
+}
+
+button{
+    background-color:var(--primary);
+    border: 2px solid  var(--text);
+    margin: 7px;
+    box-shadow: 5px 5px 5px color var(--text); 
+}
+
+.container{
+    max-width: 420px;
+    height: 100vh;
+    max-height: 745px;
+    margin: 0 auto;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    color: var(--text);
+}
+
+h1{
+    font-size: 32px;
+    text-align: center;
+    padding: 20px;
+}
+
+#result{
+    text-align: center;
+}
+
+#result img{
+    width: 40%;
+}
+
+#start-text{
+    font-size: 26px;
+    text-align: center;
+    padding: 20px;
+}
+
+#group-btn{
+    display: flex;
+    width: 100%;
+}
+
+#group-btn > button > img{
+    width: 100%;
+}
+
+footer{
+    text-align: center;
+    padding: 10px;
+    color: var(--text);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    padding: 20px 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--primary);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--background);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
